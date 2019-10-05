@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<!-- namespace：该XML文件对应哪个接口 -->
+<mapper namespace="com.example.demo2.mapper.DistrictMapper">
+
+<!-- 查询省里面的市 -->
+<!-- List<District> getByParent(String parent) -->
+<select id=" getByParent" resultType="com.example.demo2.entity.District">
+
+
+</select>
+</mapper>
+

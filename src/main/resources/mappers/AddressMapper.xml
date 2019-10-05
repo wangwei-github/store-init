@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<!-- namespace：该XML文件对应哪个接口 -->
+<mapper namespace="com.example.demo2.mapper.AddressMapper">
+
+	<!-- 插入地址数据 -->
+	<!-- Integer insertAddress(Address address) -->
+	<insert id="insertAddress" useGeneratedKeys="true" keyProperty="uid">
+
+		INSERT INTO t_address (
+		uid ,name ,
+		province_code ,province_name ,
+		city_code
+		,city_name ,
+		area_code ,area_name ,
+		zip ,address ,phone ,tel ,
+		tag
+		,is_default ,created_user ,
+		created_time ,modified_user ,modified_time
+
+		) VALUES (
+		#{uid} ,#{name},
+		#{provinceCode} ,#{provinceName} ,
+		#{cityCode} ,#{cityName} ,
+		#{areaCode} ,#{areaName} ,
+		#{zip },#{address}
+		,#{phone} ,#{tel} ,
+		#{tag} ,#{isDefault} ,#{createdUser} ,
+		#{createdTime} ,#{modifiedUser} ,#{modifiedTime}
+		)
+
+	</insert>
+
+	<!-- 查询该用户的地址数量 -->
+	<!-- Integer countByUid(Integer uid); -->
+	<select id="countByUid" resultType="java.lang.Integer">
+		SELECT
+		COUNT(*)
+		FROM
+		t_address
+		WHERE
+		uid=#{uid}
+
+	</select>
+
+	<!-- -->
+	<!-- List<Address> findAdderssByUid(Integer uid); -->
+	<select id="findAddressByUid" resultType="com.example.demo2.entity.Address"></select>
+</mapper>
+
